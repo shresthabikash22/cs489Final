@@ -22,7 +22,6 @@ public class Satellite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="satellite_name")
     @NotBlank
     private String name;
     private LocalDate launchDate;

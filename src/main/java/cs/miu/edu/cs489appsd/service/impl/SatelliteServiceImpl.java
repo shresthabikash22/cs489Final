@@ -36,8 +36,7 @@ public class SatelliteServiceImpl implements SatelliteService {
     public SatelliteResponseDto createSatellite(SatelliteRequestDto satelliteRequestDto) {
         Satellite satellite = satelliteMapper.satelliteRequestDtoToSatellite(satelliteRequestDto);
         Satellite savedSatellite = satelliteRepository.save(satellite);
-        SatelliteResponseDto satelliteResponseDto = satelliteMapper.satelliteToSatelliteResponseDto(savedSatellite) ;
-        return satelliteResponseDto;
+        return satelliteMapper.satelliteToSatelliteResponseDto(savedSatellite);
     }
 
     @Override
@@ -45,8 +44,7 @@ public class SatelliteServiceImpl implements SatelliteService {
         if(satelliteRepository.existsById(id)) {
             Satellite satellite1 = satelliteMapper.satelliteRequestDtoToSatellite(satellite);
             Satellite savedSatellite = satelliteRepository.save(satellite1);
-            SatelliteResponseDto satelliteResponseDto = satelliteMapper.satelliteToSatelliteResponseDto(savedSatellite) ;
-            return satelliteResponseDto;
+            return satelliteMapper.satelliteToSatelliteResponseDto(savedSatellite);
         }
       throw new SatelliteNotFoundException(satellite.name() + " not found");
 

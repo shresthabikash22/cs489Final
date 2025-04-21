@@ -10,9 +10,11 @@ import org.mapstruct.MappingConstants;
 
 import java.util.List;
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = {SatelliteMapper.class})
 public interface AstronautMapper {
+    @Mapping(source="satellites", target="satellites")
     Astronaut astronautRequestDtoToAstronaut(AstronautRequestDto astronautRequestDto);
+    @Mapping(source="satellites", target="satellites")
     AstronautResponseDto astronautToAstronautResponseDto(Astronaut astronaut);
     @Mapping(source= "satellites", target= "satellites")
     List<AstronautResponseDto> astronautsToAstronautResponseDtos(List<Astronaut> astronauts);

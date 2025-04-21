@@ -24,7 +24,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AstronautServiceImpl implements AstronautService {
     private final AstronautRepository astronautRepository;
-    private final SatelliteMapper satelliteMapper;
     private final AstronautMapper astronautMapper;
     private final SatelliteRepository satelliteRepository;
 
